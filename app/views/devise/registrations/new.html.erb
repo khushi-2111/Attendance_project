@@ -24,8 +24,11 @@
   </div>
 
   <div class="field">
-    <%= f.label 'Gender' %><br />
-    <%= f.text_field :gender %>
+    <%= f.label :Gender %>
+    <%= f.radio_button :gender, "male" %>
+    <%= f.label :age_child, "Male" %>
+    <%= f.radio_button :gender, "female" %>
+    <%= f.label :age_adult, "Female" %>
   </div>
 
   <div class="field">
@@ -35,7 +38,7 @@
 
   <div class="field">
     <%= f.label 'Address' %><br />
-    <%= f.text_field :address %>
+    <%= f.text_area :address %>
   </div>
 
   <div class="field">

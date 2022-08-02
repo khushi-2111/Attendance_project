@@ -21,10 +21,10 @@ class UsersController < ApplicationController
   def destroy
   end
 
-  private
+  # private // this is not correct way to pass parameters because we are using devise //
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :date_of_birth, :gender, :contact_number, :address, :designation)
-  end
+  # def user_params
+  #   params.require(:user).permit(:first_name, :last_name, :date_of_birth, :gender, :contact_number, :address, :designation)
+  # end
 
 end
