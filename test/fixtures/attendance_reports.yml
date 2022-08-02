@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  attendance: MyString
+  user_id: 1
+  status: MyString
+  date: 2022-08-01
+
+two:
+  attendance: MyString
+  user_id: 1
+  status: MyString
+  date: 2022-08-01
