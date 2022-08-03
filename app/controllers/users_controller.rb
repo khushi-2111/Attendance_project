@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id]) 
   end 
 
   def create
@@ -20,11 +19,4 @@ class UsersController < ApplicationController
 
   def destroy
   end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :date_of_birth, :gender, :contact_number, :address, :designation)
-  end
-
 end
