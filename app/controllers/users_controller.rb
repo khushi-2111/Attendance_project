@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def new
   end
 
-  def edit
+  def edit 
   end 
 
   def create
