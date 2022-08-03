@@ -66,6 +66,7 @@ gem 'devise'
 
 # Bootstrap
 gem 'bootstrap', '~> 4.0.0'
+gem 'devise-bootstrap-views', '~> 1.0'
 
 # mail confirmation
 gem "letter_opener", group: :development
