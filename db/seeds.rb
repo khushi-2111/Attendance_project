@@ -15,5 +15,21 @@ user = User.create(
   contact_number: '8109639006',
   address: 'vidya nagar',
   designation: 'junior software engineer',
-  role: 'employee'
+  role: 'employee',
+  password: '123456',
+  password_confirmation: '123456'
+)
+
+user = User.create(
+  email: 'Abc@gmail.com',
+  first_name: 'Abc',
+  last_name: 'Abc',
+  date_of_birth: '20/07/2000',
+  gender: 'male',
+  contact_number: '8123523456',
+  address: 'vidya nagar',
+  designation: 'junior software engineer',
+  role: 'employee',
+  password: '123456',
+  password_confirmation: '123456'
 )

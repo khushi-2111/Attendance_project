@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
     <title>AttendanceProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,8 +10,8 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <%= link_to 'Attendance Project', root_path, class:"navbar-brand font-weight-bold mb-2" %>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+      <%= link_to 'Attendance Project', root_path, class:"navbar-brand font-weight-bold mb-2 mt-2" %>
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
           <% if user_signed_in? %>
@@ -29,7 +24,7 @@
               <%= link_to "Edit Profile", edit_user_registration_path, class:"navbar-item btn btn-outline-success mt-1"%>
             </li>
         </ul>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"navbar-item btn btn-outline-danger"%>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"navbar-item btn btn-outline-danger mt-1"%>
                   
         <% else %>
           <li>
