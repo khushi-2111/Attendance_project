@@ -3,7 +3,6 @@ class AttendanceReportsController < ApplicationController
   end
 
   def new
-    @attendance_report = Attendance_report.new
   end
 
   def show

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
   root to: "users#show"
-  resources :users
+  resources :users do 
+    resources :attendance_reports
+  end
   # get 'users/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
