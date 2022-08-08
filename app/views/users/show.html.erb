@@ -9,7 +9,10 @@
 						<th>First Name</th>
 						<th>Last Name</th>
 						<th>Date Of Birth</th>
-						<th>Action</th>
+						<th>Gender</th>
+						<th>Contact Number</th>
+						<th>Address</th>
+						<th>Destination</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -17,6 +20,10 @@
                         <td><%= current_user.first_name %></td>
                         <td><%= current_user.last_name %></td>
                         <td><%= current_user.date_of_birth %></td>
+                        <td><%= current_user.gender %></td>
+                        <td><%= current_user.contact_number %></td>
+                        <td><%= current_user.address %></td>
+                        <td><%= current_user.designation %></td>
                     </tr>
 				</tbody>
 			</table>
@@ -28,5 +35,5 @@
         <h1>"Hello, I am Admin"</h1>
         <%= render 'index', users: @users %>
     <% end %>
-	<%= link_to "Attendance Report", class:"btn btn-secondary" %>
 </div>
+   <pre>    <strong> <%= link_to "New Attendance"%></strong></pre>
