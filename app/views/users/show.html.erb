@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <% if current_user.role == 'employee'%>
-    <h1><%= "Hello, I am #{current_user.first_name}." %></h1>
+    <h1><%= "Hello, #{current_user.first_name}." %></h1>
         <p id="notice"><%= notice %></p>
 		<div class="well col-lg-12">
 			<table id="table" class="table table-bordered table-striped">
@@ -17,6 +17,7 @@
                         <td><%= current_user.first_name %></td>
                         <td><%= current_user.last_name %></td>
                         <td><%= current_user.date_of_birth %></td>
+                        <%= link_to "Create Attendance", new_user_attendance_report_path(current_user.id), class:"btn btn-primary" %>
                     </tr>
 				</tbody>
 			</table>
@@ -28,5 +29,4 @@
         <h1>"Hello, I am Admin"</h1>
         <%= render 'index', users: @users %>
     <% end %>
-	<%= link_to "Attendance Report", class:"btn btn-secondary" %>
 </div>
