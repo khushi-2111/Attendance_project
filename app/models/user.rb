@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :trackable, :lockable
 
-  has_many :attendance_report
+  has_many :attendance_reports
          
   enum role: [:admin, :hr, :employee]
 
