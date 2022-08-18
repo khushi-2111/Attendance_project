@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AttendanceReportTest < ActiveSupport::TestCase
+class LeaveTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
