@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :leaves
          
   enum role: [:admin, :hr, :employee]
-
+   
   def assign_role
     if self.user_role == "admin"
       self.role = Role.find_by name: 'admin' if role.nil?
