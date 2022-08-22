@@ -71,3 +71,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 
 # mail confirmation
 gem "letter_opener", group: :development
+
+gem 'jquery-rails'
+
+gem 'jquery-countdown-rails'
