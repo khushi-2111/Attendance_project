@@ -1,26 +1,80 @@
-<div class="row text-center">
-  <div class="col-md-7 mt-2">
-    <div class="card">
-      <div class="card-body">
-        <%= render "total_employees", users: @user %>
+<div class="container mt-5">
+  <style>
+    .card-body {
+        background: #54b9ab;
+        text-align: center;
+        padding: 20px;
+    }
+    .current {
+        margin-top: 35px;
+    }
+    .btn-info {
+        color: #fff;
+        background-color: #54b9ab;
+        border-color: #54b9ab;
+    }
+    .text-white {
+        color: #000 !important;
+    }
+    .modal-content {
+      width: 900px;
+    }
+    .close {
+      margin-right: -45px;
+    }
+  </style>
+  <div class="row">
+    <div class="col-md-6 stretch-card grid-margin">
+      <div class="card card-img-holder text-white">
+        <div class="card-body">
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal">Total Employees</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" style="margin-right: -41px;">&times;</button>
+                    <%= render "total_employees", users: @user %>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-body">
-        <%= render "check_attendance", users: @user %>
+
+    <div class="col-md-6 stretch-card grid-margin">
+      <div class="card card-img-holder text-white">
+        <div class="card-body">      
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Check Attendance</button>
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header"> 
+                  <button type="button" class="close" data-dismiss="modal"  style="margin-right: -41px;">&times;</button>        
+                  <%= render "check_attendance", users: @user %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </div>  
   </div>
-  <div class="col-md-5 mt-2">
-    <div class="card">
-      <div class="card-body">
-        <a href="#" class="btn btn-primary">Leaves</a>
+  <div class="row mt-4">
+    <div class="col-md-6 stretch-card grid-margin">
+      <div class="card card-img-holder text-white">
+        <div class="card-body">
+          <h2>Leaves</h2>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-body">
-        <a href="#" class="btn btn-primary">Employees Select</a>
+    <div class="col-md-6 stretch-card grid-margin">
+      <div class="card card-img-holder text-white">
+        <div class="card-body">
+          <h2>Employees Select</h2>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
