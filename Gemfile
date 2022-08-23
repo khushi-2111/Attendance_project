@@ -67,11 +67,13 @@ gem 'devise'
 
 # Bootstrap
 gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
 gem 'devise-bootstrap-views', '~> 1.0'
 
 # mail confirmation
 gem "letter_opener", group: :development
 
-gem 'jquery-rails'
-
 gem 'jquery-countdown-rails'
+
+gem 'carrierwave', '~> 2.0'
+

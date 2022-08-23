@@ -24,4 +24,6 @@ class User < ApplicationRecord
   def current_workday
     workdays.find_by(date: Date.today)
    end
+
+   mount_uploader :image, ImageUploader
 end
