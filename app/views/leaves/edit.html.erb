@@ -1,0 +1,33 @@
+
+<%#= form_with model: @leave, url: edit_user_leave_path, local: true do |form| %>
+<%= form_with model: @leave, url: user_leave_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :Status %><br>
+    <%= form.text_field :status %>
+  </p>
+
+  <p>
+    <%= form.label :reason %><br>
+    <%= form.text_field :reason %>
+  </p>
+
+  <p>
+    <%= form.label :leave_type %><br>
+    <%= form.text_field :leave_type %>
+  </p>
+
+   <p>
+    <%= form.label :Start_date %><br>
+    <%= form.date_field :start_date %>
+  </p>
+
+  <p>
+    <%= form.label :end_date %><br>
+    <%= form.date_field :end_date %>
+  </p>
+  
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

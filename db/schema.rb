@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 2022_08_18_104524) do
     t.string "leave_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_send_at"
+    t.string "unconfirmed_email"
   end
 
   create_table "users", force: :cascade do |t|

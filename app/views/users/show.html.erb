@@ -1,3 +1,4 @@
+
 <div class="container mt-5">
     <% if current_user.role == 'employee'%>
     <h1><%= "Hello, I am #{current_user.first_name}." %></h1>
@@ -16,15 +17,15 @@
 					</tr>
 				</thead>
 				<tbody>
-                    <tr>
-                        <td><%= current_user.first_name %></td>
-                        <td><%= current_user.last_name %></td>
-                        <td><%= current_user.date_of_birth %></td>
-                        <td><%= current_user.gender %></td>
-                        <td><%= current_user.contact_number %></td>
-                        <td><%= current_user.address %></td>
-                        <td><%= current_user.designation %></td>
-                    </tr>
+          <tr>
+              <td><%= current_user.first_name %></td>
+              <td><%= current_user.last_name %></td>
+              <td><%= current_user.date_of_birth %></td>
+              <td><%= current_user.gender %></td>
+              <td><%= current_user.contact_number %></td>
+              <td><%= current_user.address %></td>
+              <td><%= current_user.designation %></td>
+          </tr>
 				</tbody>
 			</table>
 		</div>

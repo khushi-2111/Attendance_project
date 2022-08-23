@@ -73,11 +73,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 
 # mail confirmation
 gem "letter_opener", group: :development
-<<<<<<< HEAD
-=======
 
 gem 'jquery-countdown-rails'
 
 gem 'carrierwave', '~> 2.0'
-
->>>>>>> b2471b82f935939a4be81ba03d37c98d35e9b67c

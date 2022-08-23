@@ -1,0 +1,25 @@
+   
+<table border="1">
+<tr>
+  <th>Email Id</th>
+  <th>Role</th>
+  <th>Status</th>
+  <th>Start_date</th>
+  <th>End_date</th>
+  <th>Reason</th>
+  <th>Leave_type</th>
+  <th>Edit</th>
+</tr>
+  <% @leaves.each do |leave| %>
+    <tr>
+    <td><%= leave.user.email %></td>
+    <td><%= leave.user.role %></td>
+    <td><%= leave.status %></td>
+    <td><%= leave.start_date %></td>
+    <td><%= leave.end_date %></td>
+    <td><%= leave.reason %></td>
+    <td><%= leave.leave_type %></td>
+    <td><%= link_to "Edit", edit_user_leave_path(leave.user_id, leave) %></td>
+   </tr>
+  <% end %> 
+</table> 
