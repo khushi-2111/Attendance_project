@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_01_134424) do
+ActiveRecord::Schema.define(version: 2022_08_18_104524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attendance_reports", force: :cascade do |t|
-    t.string "attendance"
+  create_table "leaves", force: :cascade do |t|
     t.integer "user_id"
-    t.string "status"
-    t.date "date"
+    t.boolean "status"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "reason"
+    t.string "leave_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,10 +54,33 @@ ActiveRecord::Schema.define(version: 2022_08_01_134424) do
     t.string "contact_number"
     t.string "address"
     t.string "designation"
+    t.string "image"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+  end
+
+  create_table "workdays", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "day"
+    t.date "date"
+    t.time "intime"
+    t.time "outtime"
+    t.boolean "attendance"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "worklogs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "workday_id"
+    t.time "intime"
+    t.time "outtime"
+    t.time "total_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

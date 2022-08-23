@@ -1,0 +1,42 @@
+<h3 class=""><%= Date.today %></h3>
+<div class="col-lg-3 mx-lg-auto" >
+<%= form_for @workday, url: [@user, @workday], local: true do |form| %>
+  <% if @workday.errors.present? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@workday.errors.count, "error") %> prohibited this card from being saved:</h2>
+      <ul>
+        <% @workday.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :user_id, class: 'form-control' %>
+
+  <div class="form-group">
+    <%= form.label :day %>
+    <%= form.text_field :day, value: Date.today.strftime("%A"), class: 'form-control', autocomplete: 'off' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :date %>
+    <%= form.text_field :date, value: Date.today, class: 'form-control', autocomplete: 'off' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Attendance %>
+    <%= form.select :attendance, [['Present', true], ['Absent', false]], class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Status %>
+    <%= form.select :status, Workday.statuses.keys %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Create Attendance", class: 'btn btn-primary', value: 'Add Attendence' %>
+  </div>
+
+  <% end %>
+  </div>

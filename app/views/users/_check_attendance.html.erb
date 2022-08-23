@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <h1>Check Attendance</h1>
+  <div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered table-striped mb-4">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Designation</th>
+          <th>Attendance</th>
+          <th>Status</th>
+          <th>Date</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <% if user.role == "employee" %>
+            <tr>
+              <td><%= link_to user.first_name, user_path(user) %></td>
+              <td><%= user.last_name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.designation %></td>
+              <% if user.current_workday %>
+                <% if user.current_workday.attendance == true %>
+                    <td class="text-success"><%= user.current_workday.attendance = "Present" %></td>
+                <% else %>
+                    <td class="text-danger"><%= user.current_workday.attendance = "Absent" %></td>
+                <% end %>
+                <td><%= user.current_workday.status %></td>
+                <td><%= user.current_workday.date %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

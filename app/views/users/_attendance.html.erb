@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h1><%= "Hello, #{current_user.first_name}." %></h1>
+  <div class="well col-lg-12">
+    <table id="table" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date Of Birth</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= current_user.first_name %></td>
+          <td><%= current_user.last_name %></td>
+          <td><%= current_user.date_of_birth %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to "Create attendance" , new_user_workday_path(current_user.id) %>
+</div>

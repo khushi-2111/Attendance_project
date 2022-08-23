@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  workday_id: 1
+  intime: 2022-08-17 17:49:51
+  outtime: 2022-08-17 17:49:51
+  total_time: 2022-08-17 17:49:51
+
+two:
+  user_id: 1
+  workday_id: 1
+  intime: 2022-08-17 17:49:51
+  outtime: 2022-08-17 17:49:51
+  total_time: 2022-08-17 17:49:51
