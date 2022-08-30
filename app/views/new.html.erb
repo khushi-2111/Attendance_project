@@ -1,0 +1,44 @@
+<div class="field">
+  <fieldset>
+<%= form_with model: @leave, url: user_leaves_path, local: true do |form|  %>
+  <p>
+    <%= form.label :reason %><br>
+    <%= form.text_field :reason %>
+    <% @leave.errors.full_messages_for(:reason).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </p>
+  <p>
+    <%= form.label :leave_type %><br>
+    <%= form.text_field :leave_type %>
+    <% @leave.errors.full_messages_for(:leave_type).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </p>
+
+   <p>
+    <%= form.label :Start_date %><br>
+    <%= form.date_field :start_date %>
+    <% @leave.errors.full_messages_for(:start_date).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </p>
+
+  <p>
+    <%= form.label :end_date %><br>
+    <%= form.date_field :end_date %>
+    <% @leave.errors.full_messages_for(:end_date).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </p>
+  
+  <p>
+    <%= form.label :status %>
+    <%= form.select :status, ['Pending'] %><br />
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+</fieldset>
+</div>

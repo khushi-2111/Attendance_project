@@ -1,39 +1,13 @@
 
 <div class="container mt-5">
-    <% if current_user.role == 'employee'%>
-    <h1><%= "Hello, I am #{current_user.first_name}." %></h1>
-        <p id="notice"><%= notice %></p>
-		<div class="well col-lg-12">
-			<table id="table" class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Date Of Birth</th>
-						<th>Gender</th>
-						<th>Contact Number</th>
-						<th>Address</th>
-						<th>Destination</th>
-					</tr>
-				</thead>
-				<tbody>
-          <tr>
-              <td><%= current_user.first_name %></td>
-              <td><%= current_user.last_name %></td>
-              <td><%= current_user.date_of_birth %></td>
-              <td><%= current_user.gender %></td>
-              <td><%= current_user.contact_number %></td>
-              <td><%= current_user.address %></td>
-              <td><%= current_user.designation %></td>
-          </tr>
-				</tbody>
-			</table>
-		</div>
-    <% elsif current_user.role == 'hr' %>
-        <h1>"Hello, I am HR"</h1>
-        <%= render 'index', users: @users %>
-    <% else %>
-        <h1>"Hello, I am Admin"</h1>
-        <%= render 'index', users: @users %>
-    <% end %>
+	<h3>Employee Details</h3>
+	<p>Name: <%= "#{@user.first_name}" "#{@user.last_name}" %></p>
+	<p>Email: <%= @user.email if @user.email %></p>
+	<p>Date of Birth: <%= @user.date_of_birth if @user.date_of_birth %></p>
+	<p>Role: <%= @user.role if @user.role %></p>
+	<p>Gender: <%= @user.gender if @user.gender %></p>
+	<p>Contact: <%= @user.contact_number if @user.contact_number %></p>
+	<p>Address: <%= @user.address if @user.address %></p>
+	<p>Designation: <%= @user.designation if @user.designation %></p>
+	<%= link_to "Back", users_path %>
 </div>
