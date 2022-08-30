@@ -1,12 +1,12 @@
 <div class="container mt-5">
-    <h3>Employee Details</h3>
-    <p>Name: <%= "#{@user.first_name}" "#{@user.last_name}" %></p>
-    <p>Email: <%= @user.email if @user.email %></p>
-    <p>Date of Birth: <%= @user.date_of_birth if @user.date_of_birth %></p>
-    <p>Role: <%= @user.role if @user.role %></p>
-    <p>Gender: <%= @user.gender if @user.gender %></p>
-    <p>Contact: <%= @user.contact_number if @user.contact_number %></p>
-    <p>Address: <%= @user.address if @user.address %></p>
-    <p>Designation: <%= @user.designation if @user.designation %></p>
-    <%= link_to "Back", users_path %>
+	<h3>Employee Details</h3>
+	<p>Name: <%= "#{@user.first_name}" "#{@user.last_name}" %></p>
+	<p>Email: <%= @user.email if @user.email %></p>
+	<p>Date of Birth: <%= @user.date_of_birth if @user.date_of_birth %></p>
+	<p>Role: <%= @user.role if @user.role %></p>
+	<p>Gender: <%= @user.gender if @user.gender %></p>
+	<p>Contact: <%= @user.contact_number if @user.contact_number %></p>
+	<p>Address: <%= @user.address if @user.address %></p>
+	<p>Designation: <%= @user.designation if @user.designation %></p>
+	<%= link_to "Back", users_path %>
 </div>

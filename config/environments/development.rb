@@ -65,4 +65,8 @@ Rails.application.configure do
   # mail confirmation
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
+
+  # Time
+  # config.time_zone = "Chennai"
+  # config.active_record.default_timezone = :local
 end
