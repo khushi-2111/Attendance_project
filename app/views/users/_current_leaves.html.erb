@@ -1,0 +1,31 @@
+<br />
+User Leaves <%= Leave.count %>
+<div class="container mt-5">
+  <h1>Check Leaves</h1>
+    <table class="table table-bordered table-striped mb-4">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email Id</th>
+          <th>All Leaves</th>
+          <th>Start_date</th>
+          <th>End_date</th>
+          <th>Reason</th>
+          <th>Leave_type</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <% if user.role == "employee" %>
+            <tr>
+              <td><%= link_to user.first_name, user_path(user) %></td>
+              <td><%= user.email %></td>
+              <td><%= link_to "Leaves", user_leaves_path(user)%></td>
+
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+</div>

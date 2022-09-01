@@ -25,5 +25,9 @@ class User < ApplicationRecord
     workdays.find_by(date: Date.today)
   end
 
+  def current_leaves
+    leaves.find_by(start_date: Date.today)
+  end
+
    mount_uploader :image, ImageUploader
 end

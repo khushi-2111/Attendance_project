@@ -1,0 +1,39 @@
+
+<h3 class="float-right"><%= Date.today %></h3>
+<div class="col-lg-3 mx-lg-auto" >
+<%= form_for @attendance_report, url: [@user, @attendance_report], local: true do |form| %>
+  <% if @attendance_report.errors.present? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attendance_report.errors.count, "error") %> prohibited this card from being saved:</h2>
+      <ul>
+        <% @attendance_report.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <h1><%= "Hello, #{@user.first_name}" %></h1>
+
+  <%= form.hidden_field :user_id, class: 'form-control' %>
+
+  <div class="form-group">
+    <%= form.label :date %>
+    <%= form.text_field :date, value: Date.today, class: 'form-control', autocomplete: 'off' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Attendance %>
+    <%= form.select :attendance, [['Present', true], ['Absent', false]]%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Status %>
+    <%= form.select :status, AttendanceReport.statuses.keys %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Create Attendance", class: 'btn btn-primary', value: 'Add Attendence' %>
+  </div>
+<% end %>
+</div>

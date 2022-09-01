@@ -25,9 +25,14 @@ Rails.application.routes.draw do
   #   root to: "users#index", as: :authenticated_user
   # end
   resources :users do
-    resources :leaves
+    resources :leaves do
+      member do
+        get :approval
+        get :rejected
+      end
+    end
     resources :workdays do
       resources :worklogs
+      end
     end
-  end
-end   
+  end  

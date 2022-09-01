@@ -2,16 +2,16 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   def index
     @users = User.all
-    path = case current_user.role
-    when 'admin'
-      admin_index_path
-    when 'hr'
-      hr_index_path
-    else
-      employee_index_path
-    end
+      path = case current_user.role
+      when 'admin'
+        admin_index_path
+      when 'hr'
+        hr_index_path
+      else
+        employee_index_path
+      end
 
-    redirect_to path      
+      redirect_to path      
   end
 
   def show
