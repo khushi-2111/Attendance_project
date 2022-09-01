@@ -1,6 +1,7 @@
 class LeavesController < ApplicationController
   def index
-    @leaves = Leave.all
+    @user = User.find(params[:user_id])
+    @leave = @user.leaves.all
   end
 
   def new
@@ -8,14 +9,31 @@ class LeavesController < ApplicationController
   end
 
   def create
-     @leave = current_user.leaves.new(leave_params)
-    if @leave.save
-      user = current_user
-      LeaveMailer.leave_created(user).deliver
-      redirect_to root_path 
-    else
-      render :new
-    end
+		@leave = current_user.leaves.new(leave_params)
+		if @leave.save
+		 redirect_to root_path 
+		else
+		 render :new
+		end
+  end
+
+  def show
+    @user = User.find(params[:user_id])
+    @leave = @user.leaves.find(params[:id])
+  end
+
+  def approval
+  	@user = User.find(params[:user_id])
+    @leave = @user.leaves.find(params[:id])
+    @leave.update(status: "Approval") 
+    redirect_to user_leaves_path(@user)
+  end
+
+  def rejected
+  	@user = User.find(params[:user_id])
+    @leave = @user.leaves.find(params[:id])
+    @leave.update(status: "Rejected")
+    redirect_to user_leaves_path(@user)
   end
 
   def edit
@@ -36,6 +54,7 @@ class LeavesController < ApplicationController
  private
 
   def leave_params
-      params.require(:leave).permit(:status, :start_date, :end_date, :reason, :leave_type)
+    params.require(:leave).permit(:status, :start_date, :end_date, :reason, :leave_type)
   end
 end
+

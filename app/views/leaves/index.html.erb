@@ -1,25 +1,32 @@
-   
-<table border="1">
-<tr>
-  <th>Email Id</th>
-  <th>Role</th>
-  <th>Status</th>
-  <th>Start_date</th>
-  <th>End_date</th>
-  <th>Reason</th>
-  <th>Leave_type</th>
-  <th>Edit</th>
-</tr>
-  <% @leaves.each do |leave| %>
+<td><%= link_to "Back", users_path, class: "btn btn-primary float-right" %></td>
+Pending => <b><%= Leave.where(status: "Pending").count %></b><br />
+Approval => <b><%= Leave.where(status: "Approval").count %></b><br />
+Rejected => <b><%= Leave.where(status: "Rejected").count %></b><br />
+<strong><%= pie_chart Leave.group(:status).count, donut: true, color: ["green", "#FF0000"] %></strong><br />
+<table border="1" id="table" class="table table-bordered table-striped">
+	<tr>
+	  <th>Email Id</th>
+	  <th>Role</th>
+	  <th>Start_date</th>
+	  <th>End_date</th>
+	  <th>Reason</th>
+	  <th>Leave_type</th>
+	  <th>status</th>
+	  <th>Approve/Reject</th>
+	  <th>Edit</th>
+	</tr>
+  <% @leave.each do |leave| %>
     <tr>
-    <td><%= leave.user.email %></td>
-    <td><%= leave.user.role %></td>
-    <td><%= leave.status %></td>
-    <td><%= leave.start_date %></td>
-    <td><%= leave.end_date %></td>
-    <td><%= leave.reason %></td>
-    <td><%= leave.leave_type %></td>
-    <td><%= link_to "Edit", edit_user_leave_path(leave.user_id, leave) %></td>
-   </tr>
+	    <td><%= leave.user.email %></td>
+	    <td><%= leave.user.role %></td>
+	    <td><%= leave.start_date %></td>
+	    <td><%= leave.end_date %></td>
+	    <td><%= leave.reason %></td>
+	    <td><%= leave.leave_type %></td>
+	    <td><%= leave.status %></td>
+	    <td><%= link_to "App",approval_user_leave_path(leave.user_id, leave)%> | <%= link_to "Rej",rejected_user_leave_path(leave.user_id, leave)%></td>
+	    <td><%= link_to "Edit",edit_user_leave_path(leave.user_id, leave)%></td>
+    </tr>
   <% end %> 
 </table> 
+

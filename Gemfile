@@ -77,3 +77,4 @@ gem "letter_opener", group: :development
 gem 'jquery-countdown-rails'
 
 gem 'carrierwave', '~> 2.0'
+gem "chartkick"

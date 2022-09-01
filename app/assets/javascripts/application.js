@@ -18,3 +18,5 @@
 //= require bootstrap
 //= require jquery.countdown
 //= require jquery.countdown-es
+//= require chartkick
+//= require Chart.bundle

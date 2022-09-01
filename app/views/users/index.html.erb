@@ -1,6 +1,6 @@
-<div class="container mt-5">
+ <div class="container mt-5">
   <% if current_user.role == 'employee'%>
-  <h1><%= "Hello, #{current_user.first_name}." %></h1>
+  <h1><%= "Hello, #{current_user.first_name}(Employee)." %></h1>
   <style>
     .card-body {
       background: #54b9ab;
@@ -60,10 +60,20 @@
     <div class="col-md-6 stretch-card grid-margin">
       <div class="card card-img-holder text-white">
         <div class="card-body">
-          <h2>Leaves</h2>
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#thisModal">Leave</button>
+          <div class="modal fade" id="thisModal" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <%= render "create_leaves", users: @user %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </div>  
+  </div>
     <div class="col-md-6 stretch-card grid-margin">
       <div class="card card-img-holder text-white">
         <div class="card-body">

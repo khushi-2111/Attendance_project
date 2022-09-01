@@ -1,0 +1,35 @@
+
+<div><%= link_to "Back", users_path, class: "btn btn-primary float-right" %></div>
+<div class="container mt-5">
+  <h1><%= "Hello, #{current_user.first_name}." %></h1>
+  <div class="well col-lg-12">
+    <table id="table" class="table table-bordered table-model table-striped">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Designation</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Reason</th>
+          <th>Leave Type</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= current_user.email %></td>
+          <td><%= current_user.designation %></td>
+          <% current_user.leaves.each do |leave| %>
+          <td><%= leave.start_date%></td>
+          <td><%= leave.end_date%></td>
+          <td><%= leave.reason%></td>
+          <td><%= leave.leave_type%></td>
+          <td><%= leave.status%></td>
+          <%end%>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div>Employee Leave <%= current_user.leaves.count %></div>
+<div><%= link_to "Apply Leave", new_user_leave_path(current_user.id) %></div>

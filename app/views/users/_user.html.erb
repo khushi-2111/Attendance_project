@@ -17,7 +17,7 @@
       color: #000 !important;
     }
     .modal-content {
-      width: 900px;
+      width: fit-content;
     }
     .close {
       margin-right: -45px;
@@ -64,10 +64,20 @@
     <div class="col-md-6 stretch-card grid-margin">
       <div class="card card-img-holder text-white">
         <div class="card-body">
-          <h2>Leaves</h2>
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#thisModal">Check Leave</button>
+          <div class="modal fade" id="thisModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content modal-leave">
+                <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal"  style="margin-right: -41px;">&times;</button>
+                <%= render "users/current_leaves", users: @user %>
+               </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </div> 
     <div class="col-md-6 stretch-card grid-margin">
       <div class="card card-img-holder text-white">
         <div class="card-body">
